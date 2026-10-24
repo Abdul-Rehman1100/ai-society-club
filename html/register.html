@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Society Register</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/register.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h1>University AI Society</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="register.html" class="active">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Event Registration</h2>
+
+    <section class="form-container">
+      <form id="reg-form">
+        
+        <fieldset>
+          <legend>Personal Details</legend>
+          
+          <label for="fullname">Full Name:</label>
+          <input type="text" id="fullname" name="fullname" required minlength="3" placeholder="e.g. John Doe">
+
+          <label for="email">University Email:</label>
+          <input type="email" id="email" name="email" required placeholder="student@univ.edu">
+
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required pattern="[1, 5, 6, 34-39]{11}" placeholder="03001234567 (11 digits)">
+        </fieldset>
+
+        <fieldset>
+          <legend>Event Selection</legend>
+          
+          <label for="event-choice">Choose an Event:</label>
+          <select id="event-choice" name="eventChoice" required>
+            <option value="">-- Select Event --</option>
+            <option value="Intro to ML">Intro to Machine Learning</option>
+            <option value="AI Ethics Panel">Ethics in AI Panel</option>
+            <option value="AI Hackathon 2026">Annual AI Hackathon 2026</option>
+            <option value="Computer Vision">Computer Vision Workshop</option>
+          </select>
+
+          <p>How did you hear about us?</p>
+          <label><input type="radio" name="source" value="Poster" checked> Campus Poster</label>
+          <label><input type="radio" name="source" value="Friend"> Friend / Classmate</label>
+          <label><input type="radio" name="source" value="Social Media"> Social Media</label>
+        </fieldset>
+
+        <button type="submit" class="btn">Register Now</button>
+      </form>
+
+      <p id="msg" class="success-message"></p>
+    </section>
+
+    <section class="registrations-list">
+      <h2>Registered Participants</h2>
+      <button id="clear-btn" class="btn-danger">Clear All Registrations</button>
+      
+      <table id="reg-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Event</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 University AI Society. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
